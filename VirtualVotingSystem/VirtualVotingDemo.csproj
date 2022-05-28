@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Admin.Directory.directory_v1" Version="1.49.0.1982" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="TeleSign" Version="2.2.2"></PackageReference>
+    <PackageReference Include="Twilio" Version="5.52.1" />
+    <PackageReference Include="Twilio.AspNet.Core" Version="5.37.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VirtualVotingSystemBussinessLayer\VirtualVotingSystemBussinessLayer.csproj" />
+    <ProjectReference Include="..\VirtualVotingSystemEntities\VirtualVotingSystemEntities.csproj" />
+    <ProjectReference Include="..\VirtualVotingSystemExceptions\VirtualVotingSystemExceptions.csproj" />
+  </ItemGroup>
+
+</Project>

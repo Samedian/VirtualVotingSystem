@@ -1,0 +1,82 @@
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* this tag is used to add effects to parallex*/
+        .parallax {
+            background-image: url("/wwwroot/Images/IndianFlag.jpg");
+            min-height: 1000px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /*This tag is used to add fontStyle,fontSize,colorand shadow effect to the Header*/
+        h1 {
+            text-align: center;
+            color: steelblue;
+            font-size: 50px;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        /* this tag is used to add fontSize,height and color to the questions in the view */
+        .questions {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 1.6;
+            color: black;
+        }
+
+        /* this tag is used to fontSize,color and height of the class*/
+        .FAQ {
+            font-size: 20px;
+            color: black;
+            height: 800px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="parallax">
+        <br />
+
+        <h1>Frequently Asked Questions</h1>
+        @*  this class contains the content to be shown on the screen*@
+        <div class="FAQ" style="height:00px;background-color:yellowgreen;font-size:16px">
+            <br />
+            <div class="questions">1.Why should I cast my vote through Online?</div>
+            Due to the pandemic (COVID-19) ,many sectors are working virtually as Government issues guidelines regarding the public gatherings.It is safe to cast the vote through online mode with-out going to booths.
+            <br>
+            <div class="questions">2.What are the basic guideliness to be followed by the Voter before the process of Registeration?</div>
+            *) AadharUID should not be shared with anyone.
+            <br />
+            *) OTP will be sent at the time of registration and Login,It should be confidential and do not share with anyone.
+            <br>
+            <div class="questions">3. What are the requirements for User to participate in Virtual Voting System?</div>
+            User should contain a valid Aadhar UID and it should be linked with MobileNumber&EmailId.
+            <br>
+            <div class="questions">4. What is the minimum age required for User to participate?</div>
+            User should be minmum of 18 years of age on or before the last day of registration.
+            <br>
+            <div class="questions">5.Can I use my VoterID issued by government as LoginID?</div>
+            No , the VirtualVoterID is different to VoterID and it is generated upon successfull registration .
+            <br>
+            <div class="questions">6.How can I get login credentials?</div>
+            To get the login credentials ,User has to register with his/her AadharId. up on successfull registration ,LoginId/VVID will be sent to registered MobileNo.
+            <div class="questions">7.What safeguards are in place for the Virtual voting system?</div>
+            Avoiding the public gatherings
+            No chance for spreading of virus
+            <div class="questions">8.Can I have access to view the result ?</div>
+            Yes, User can view the result once the process of polling is completed.
+            <div class="questions">9.Where can I view the result?</div>
+            User can login in to ..................com with his login credentials and view the result.
+            <div class="questions">10.What if MobileNumber is linked to mutliple AadharUID?</div>
+            There is no restriction to link multiple UID to same MobileNumber and User can link according to his/her own convinience.
+        </div>
+    </div>
+</body>
+</html>

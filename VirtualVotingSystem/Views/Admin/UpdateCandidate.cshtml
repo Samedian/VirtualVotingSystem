@@ -1,0 +1,129 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>UPDATE CANDIDATE</title>
+    <link rel="Stylesheet" href="~/css/UpdateCandidate.css">
+    <style>
+        h1 {
+            font-family: Times of Roman;
+            font-size: 25pt;
+            font-style: normal;
+            font-weight: bold;
+            color: cornflowerblue;
+            text-align: center;
+            text-shadow: 2px 2px 2px black;
+        }
+
+        table {
+            box-shadow: 0px 0px;
+            font-family: 'Times New Roman';
+            color: whitesmoke;
+            font-size: 15pt;
+            font-style: normal;
+            font-weight: bold;
+            background-color: darkgray;
+            border-collapse: collapse;
+            border: 2px white
+        }
+        /* Style the submit button */
+        input[type=submit] {
+            width: 10%;
+            height: 10%;
+            background-color: green;
+            color: white;
+        }
+        /* Style the reset button */
+        input[type=reset] {
+            top: 200px;
+            width: 10%;
+            height: 10%;
+            background-color: red;
+            color: white;
+        }
+
+        p {
+            color: darkgreen;
+            font-size: 17px;
+            text-align: center;
+            font-family: 'Times New Roman';
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#candidateId").mouseleave(function () {
+                var value = $("#candidateId").val();
+
+                var regex = /^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{2,}$/;
+
+                if (!value.match(regex)) {
+                    alert("Enter a valid CandidateId");
+                }
+            });
+        });
+        $(document).ready(function () {
+            $("#candidateName").mouseleave(function () {
+                var value = $("#candidateName").val();
+
+                var regex = /^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}$/;
+
+                if (!value.match(regex)) {
+                    alert("CandidateName should contains only alphabets ");
+                }
+            });
+        });
+        $(document).ready(function () {
+            $("#aadharNo").mouseleave(function () {
+                var value = $("#aadharNo").val();
+
+                var regex = /^[1-9][0-9]{11}$/;
+
+                if (!value.match(regex)) {
+                    alert("Aadhar Should be 12 digit Number");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>UPDATE CANDIDATE</h1>
+    <br />
+    @using (Html.BeginForm())
+    {
+        <table border="1" cellpadding="20" align="center">
+            <tr>
+                <td><lable for="candidateIdLable">CandidateId: *</lable></td>
+                <td><input type="text" name="CandidateId" id="candidateId" required></td>
+            </tr>
+            <tr>
+                <td><lable for="candidateNameLable">CandidateName: *</lable></td>
+                <td><input type="text" name="CandidateName" id="candidateName" required></td>
+            </tr>
+            <tr>
+                <td><lable for="aadharNoLable">AadharNo: *</lable></td>
+                <td><input type="text" name="AadharNumber" id="aadharNo" required placeholder="XXXX XXXX XXXX"></td>
+            </tr>
+        </table>
+        <br>
+        @if (ViewBag.Error == true)
+        {
+            <p>
+                Details Updated Successfully
+            </p>
+        }
+        else if (ViewBag.Error == false)
+        {
+            <p>
+                Sorry...Something went wrong
+            </p>
+        }
+
+        <br>
+        <div class="buttons" align="center">
+            <input type="submit" value="Submit" id="submit">
+            &nbsp &nbsp <input type="reset" value="Reset">
+        </div>
+    }
+
+</body>
+</html>

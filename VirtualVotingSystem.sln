@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualVotingDemo", "VirtualVotingSystem\VirtualVotingDemo.csproj", "{D1ABC884-9F3F-42D5-939E-06F5F1887FF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualVotingSystemDataAccessLayer", "VirtualVotingSystemDataAccessLayer\VirtualVotingSystemDataAccessLayer.csproj", "{CCE5DD8E-E6E2-403C-8BFB-36A74F9C0EFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualVotingSystemBussinessLayer", "VirtualVotingSystemBussinessLayer\VirtualVotingSystemBussinessLayer.csproj", "{05D8B6F1-98EB-48C7-BE33-07BB651F922A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualVotingSystemEntities", "VirtualVotingSystemEntities\VirtualVotingSystemEntities.csproj", "{3E2FE0A5-BAEC-42D2-921B-92DCDC1BB6A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualVotingSystemExceptions", "VirtualVotingSystemExceptions\VirtualVotingSystemExceptions.csproj", "{22B684FB-C083-44F5-897B-E7AD45332A93}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualVotingSystemMSTest", "VirtualVotingSystemMSTest\VirtualVotingSystemMSTest.csproj", "{2A2778A3-DCE4-4E66-958C-62EB93DB1FE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1ABC884-9F3F-42D5-939E-06F5F1887FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1ABC884-9F3F-42D5-939E-06F5F1887FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1ABC884-9F3F-42D5-939E-06F5F1887FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1ABC884-9F3F-42D5-939E-06F5F1887FF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE5DD8E-E6E2-403C-8BFB-36A74F9C0EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE5DD8E-E6E2-403C-8BFB-36A74F9C0EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE5DD8E-E6E2-403C-8BFB-36A74F9C0EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE5DD8E-E6E2-403C-8BFB-36A74F9C0EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05D8B6F1-98EB-48C7-BE33-07BB651F922A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05D8B6F1-98EB-48C7-BE33-07BB651F922A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05D8B6F1-98EB-48C7-BE33-07BB651F922A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05D8B6F1-98EB-48C7-BE33-07BB651F922A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2FE0A5-BAEC-42D2-921B-92DCDC1BB6A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2FE0A5-BAEC-42D2-921B-92DCDC1BB6A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2FE0A5-BAEC-42D2-921B-92DCDC1BB6A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2FE0A5-BAEC-42D2-921B-92DCDC1BB6A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B684FB-C083-44F5-897B-E7AD45332A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B684FB-C083-44F5-897B-E7AD45332A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B684FB-C083-44F5-897B-E7AD45332A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B684FB-C083-44F5-897B-E7AD45332A93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A2778A3-DCE4-4E66-958C-62EB93DB1FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A2778A3-DCE4-4E66-958C-62EB93DB1FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A2778A3-DCE4-4E66-958C-62EB93DB1FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A2778A3-DCE4-4E66-958C-62EB93DB1FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88EB5DD8-420A-4DFA-A5FB-85342111C7FC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="Stylesheet" href="~/css/StyleSheet.css">
+   
+     
+    <title>OTP</title>
+    <style>
+
+        /*#otpEntered {
+            padding-left: 15px;
+            letter-spacing: 50px;
+            background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+            background-position: bottom;
+            background-size: 55px 2px;
+            background-repeat: repeat-x;
+            background-position-x: 40px;
+            width: 310px;
+            height: 50px;
+            font-family: 'Times New Roman';
+        }*/
+
+        h1 {
+            font-family: Times of Roman;
+            font-size: 25pt;
+            font-style: normal;
+            font-weight: bold;
+            color: blue;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        h4 {
+            text-align: center;
+            color: black;
+        }
+
+        table {
+            box-shadow: 0px 0px;
+            font-family: Calibri;
+            color: white;
+            font-size: 15pt;
+            font-style: normal;
+            font-weight: bold;
+            background-color: black;
+            border-collapse: collapse;
+            border: 2px white
+        }
+
+        /* Style the submit button */
+        input[type=submit] {
+            width: 10%;
+            height: 10%;
+            background-color: green;
+            color: white;
+        }
+        /* Style the reset button */
+        input[type=reset] {
+            top: 200px;
+            width: 10%;
+            height: 10%;
+            background-color: red;
+            color: white;
+        }
+        p{
+            text-align:center;
+            font-size:18px;
+            font-family:'Times New Roman';
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> USER LOGIN </h1>
+    <br />
+    <h4>Please enter the OTP received </h4>
+    <br/>
+    @using (Html.BeginForm())
+    {
+        @if(ViewBag.Error!=null)
+        {
+           <p>
+               @ViewBag.Error
+           </p>
+        }
+        <table border="1" cellpadding="20" align="center">
+            <tr>
+                <td>
+                    <lable for="OTP">OTP: *</lable>
+                </td>
+                <td>
+                    <input type="text" name="OTP" id="otpEntered" maxlength="5" min="0" max="9" />
+                </td>
+
+            </tr>
+        </table>
+        <br>
+        <br>
+        <div class="buttons" align="center">
+            <input type="submit" value="Submit" id="submit">
+            &nbsp &nbsp <input type="reset" value="Reset">
+        </div>
+        
+    }
+    <br>
+</body>
+</html>

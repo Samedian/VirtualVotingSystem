@@ -1,0 +1,84 @@
+﻿@model VirtualVotingSystemEntities.CandidateDetailEntity
+@{
+    ViewData["Title"] = "ShowCandidateWithLeastVotesByState";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        h1 {
+            text-align: center;
+            color: orangered;
+            background-color: green;
+            font-family: 'Times New Roman';
+            font-size: 35px;
+        }
+
+        Table {
+            width: 100%;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        th {
+            background-color: black;
+            height: 100px;
+            color: white;
+            font-size: 25px;
+            font-family: 'Times New Roman';
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        input[type=submit] {
+            width: 10%;
+            height: 10%;
+            background-color: green;
+            color: white;
+        }
+
+        .submitButton mouse {
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Candidate With Lowest Votes By State</h1>
+    <br />
+    <br />
+    <
+    <table cellpadding="10" border="1">
+        <tr>
+            <th>Aadhar number</th>
+            <th>CandidateId</th>
+            <th>CandidateName</th>
+            <th>CandidateParty</th>
+            <th>Votes</th>
+            <th>ConstituencyState</th>
+
+        </tr>
+        <tr>
+            <td>@Model.AadharNumber</td>
+            <td>@Model.CandidateId</td>
+            <td>@Model.CandidateName</td>
+            <td>@Model.CandidateParty</td>
+            <td>@Model.Votes</td>
+            <td>@Model.ConstituencyState</td>
+
+        </tr>
+
+
+    </table>
+    <br />
+    <br />
+    <div class="submitButton" align="center">
+        @Html.ActionLink("Back to Index", "Index")
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>USER REGISTRATION</title>
+    <link rel="Stylesheet" href="~/css/StyleSheet.css">
+    <style>
+        h1 {
+            font-family: Times of Roman;
+            font-size: 25pt;
+            font-style: normal;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        h4 {
+            text-align: center;
+            color: black;
+        }
+
+        table {
+            box-shadow: 0px 0px;
+            font-family: Calibri;
+            color: white;
+            font-size: 15pt;
+            font-style: normal;
+            font-weight: bold;
+            background-color: black;
+            border-collapse: collapse;
+            border: 2px white
+        }
+        /* Style the submit button */
+        input[type=submit] {
+            width: 10%;
+            height: 10%;
+            background-color: green;
+            color: white;
+        }
+        /* Style the reset button */
+        input[type=reset] {
+            top: 200px;
+            width: 10%;
+            height: 10%;
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#aadharNo").blur(function () {
+                var value = $("#aadharNo").val();
+
+                var regex = /^[1-9][0-9]{11}$/;
+
+                if (!value.match(regex)) {
+                    alert("Aadhar should be 12 digit number");
+                    
+                }
+            });
+        });
+    </script>
+</head>
+<body align="center" bgcolor="lightblue">
+    <br />
+    <br />
+    <h1 align="center" style="color:blue"> USER REGISTRATION </h1>
+    <br />
+    @using (Html.BeginForm())
+    {
+        <table border="1" cellpadding="20" align="center">
+            <tr>
+                <td><lable for="aadharNoLable">AADHAR NO: *</lable></td>
+                <td><input type="text" name="AadharNumber" id="aadharNo" required placeholder="XXXX XXXX XXXX"></td>
+                
+            </tr>
+        </table>
+        <br>
+        <br>
+        <div class="buttons" align="center">
+            <input type="submit" value="Submit" id="submit">
+            &nbsp &nbsp <input type="reset" value="Reset">
+        </div>
+    }
+    <br>
+    <h4>Note* :Please make sure your Mobile Number is linked with AadharNumber</h4>
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>UPDATE ADMIN</title>
+    <link rel="Stylesheet" href="~/css/UpdateAdmin.css">
+    <style>
+        h1 {
+            font-family: Times of Roman;
+            font-size: 25pt;
+            font-style: normal;
+            font-weight: bold;
+            color: mediumblue;
+            text-align: center;
+            text-shadow: 2px 2px 2px whitesmoke;
+            text-decoration-color: whitesmoke;
+        }
+
+        h4 {
+            text-align: center;
+            color: darkred;
+            font-family: 'Times New Roman';
+        }
+
+        table {
+            box-shadow: 0px 0px;
+            font-family: Calibri;
+            color: white;
+            font-size: 15pt;
+            font-style: normal;
+            font-weight: bold;
+            background-color: black;
+            border-collapse: collapse;
+            border: 2px white
+        }
+        /* Style the submit button */
+        input[type=submit] {
+            width: 10%;
+            height: 10%;
+            background-color: green;
+            color: white;
+        }
+        /* Style the reset button */
+        input[type=reset] {
+            top: 200px;
+            width: 10%;
+            height: 10%;
+            background-color: red;
+            color: white;
+        }
+
+        p {
+            color: green;
+            font-size: 17px;
+            text-align: center;
+            font-family: 'Times New Roman';
+        }
+        .p1 {
+            color: red;
+            font-size: 17px;
+            text-align: center;
+            font-family: 'Times New Roman';
+        }
+    </style>
+    <script>
+        function Pwd() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</head>
+<body>
+    <br />
+    <h1> UPDATE ADMIN PASSWORD </h1>
+    <br />
+    @using (Html.BeginForm())
+    {
+        <table border="1" cellpadding="20" align="center">
+            <tr>
+                <td><lable for="adminIdLable">Admin Id: *</lable></td>
+                <td><input type="text" name="LoginId" id="loginId" required placeholder="XXX XXX"></td>
+            </tr>
+            <tr>
+                <td><lable for="passwordLable">Password: *</lable></td>
+                <td>
+                    <input type="password" name="Pass" id="password" />
+                    <input type="checkbox" onclick="Pwd()" /> View
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div class="buttons" align="center">
+            <input type="submit" value="Submit" id="submit">
+            &nbsp &nbsp <input type="reset" value="Reset">
+        </div>
+    }
+    <br>
+    @if (ViewBag.Error == true)
+    {
+        <p>
+            Details Updated Successfully
+        </p>
+    }
+    else if (ViewBag.Error == false)
+    {
+        <div class="p1">
+            Sorry...No Credentials Found
+        </div>
+    }
+</body>
+</html>

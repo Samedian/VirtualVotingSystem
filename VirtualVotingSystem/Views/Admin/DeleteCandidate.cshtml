@@ -1,0 +1,118 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title> DELETE CANDIDATE</title>
+    <link rel="Stylesheet" href="~/css/DeleteCandidate.css">
+    <style>
+        h1 {
+            font-family: Times of Roman;
+            font-size: 25pt;
+            font-style: normal;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-decoration: underline;
+            text-shadow: 2px 2px 2px black;
+            text-decoration-color: whitesmoke;
+        }
+
+        h4 {
+            text-align: center;
+            color: whitesmoke;
+        }
+
+        table {
+            box-shadow: 0px 0px;
+            font-family: Calibri;
+            color: white;
+            font-size: 15pt;
+            font-style: normal;
+            font-weight: bold;
+            background-color: black;
+            border-collapse: collapse;
+            border: 2px white
+        }
+        /* Style the submit button */
+        input[type=submit] {
+            width: 10%;
+            height: 10%;
+            background-color: green;
+            color: white;
+        }
+        /* Style the reset button */
+        input[type=reset] {
+            top: 200px;
+            width: 10%;
+            height: 10%;
+            background-color: red;
+            color: white;
+        }
+
+        p {
+            color: lightgreen;
+            font-size: 17px;
+            text-align: center;
+            font-family: 'Times New Roman';
+        }
+
+        .p1 {
+            color: darkred;
+            font-size: 17px;
+            text-align: center;
+            font-family: 'Times New Roman';
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#CandidateId").mouseleave(function () {
+                var value = $("#CandidateId").val();
+
+                var regex = /^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{2,}$/;
+
+                if (!value.match(regex)) {
+                    alert("Enter a valid CandidateId");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <br />
+    <br />
+    <h1> DELETE CANDIDATE</h1>
+    <br />
+    @using (Html.BeginForm())
+    {
+        <table border="1" cellpadding="20" align="center">
+            <tr>
+                <td><lable for="CandidateIdLable">Candidate Id: *</lable></td>
+                <td><input type="text" name="CandidateId" id="CandidateId" required placeholder="XXXX XXXX XXXX"></td>
+            </tr>
+            <tr>
+                <td><lable for="reasonLable">Reason: </lable></td>
+                <td><input type="text" name="reason" id="reason"></td>
+            </tr>
+        </table>
+        <br>
+        @if (ViewBag.Error == true)
+        {
+            <p>
+                Candidate Deleted Successfully
+            </p>
+        }
+        else if (ViewBag.Error == false)
+        {
+            <div class="p1">
+                    Sorry...No Candidate Found
+            </div>
+        }
+        <br>
+        <div class="buttons" align="center">
+            <input type="submit" value="Submit" id="submit">
+            &nbsp &nbsp <input type="reset" value="Reset">
+        </div>
+    }
+    <br>
+</body>
+</html>

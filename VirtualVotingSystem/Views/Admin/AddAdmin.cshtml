@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> ADMIN REGISTRATION</title>
+    <link rel="Stylesheet" href="~/css/AddAdmin.css">
+    <style>
+        h1 {
+            font-family: Times of Roman;
+            font-size: 25pt;
+            font-style: normal;
+            font-weight: bold;
+            color: whitesmoke;
+            text-align: center;
+            text-decoration: underline;
+            text-shadow: 2px 2px 4px orange;
+            text-decoration-color: green;
+        }
+
+       
+
+        table {
+            box-shadow: 0px 0px;
+            font-family: Calibri;
+            color: white;
+            font-size: 15pt;
+            font-style: normal;
+            font-weight: bold;
+            background-color: black;
+            border-collapse: collapse;
+            border: 2px white
+        }
+        /* Style the submit button */
+        input[type=submit] {
+            width: 10%;
+            height: 10%;
+            background-color: green;
+            color: white;
+        }
+        /* Style the reset button */
+        input[type=reset] {
+            top: 200px;
+            width: 10%;
+            height: 10%;
+            background-color: red;
+            color: white;
+        }
+        p{
+            color:lightgreen;
+            font-size:17px;
+            text-align:center;
+            font-family:'Times New Roman';
+        }
+        .p1 {
+            color: red;
+            font-size: 17px;
+            text-align: center;
+            font-family: 'Times New Roman';
+        }
+
+       
+       
+    </style>
+    <script>
+
+        function Pwd() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+       
+    </script>
+    
+</head>
+<body>
+    <h1> ADMIN REGISTRATION</h1>
+    <br />
+    @using (Html.BeginForm())
+    {
+
+        <table border="1" cellpadding="20" align="center">
+            <tr>
+                <td><label for="adminIdLable">Admin Id: *</label></td>
+                <td><input type="text" name="LoginId" id="adminId" required placeholder="XXX XXX"></td>
+            </tr>
+
+            <tr>
+                <td><label for="passwordLable">Password: *</label></td>
+                <td>
+                    <input type="password" id="password" name="Pass">
+                    <input type="checkbox" onclick="Pwd()" /> View
+
+                </td>
+            </tr>
+
+        </table>
+        <br>
+        <br>
+        <div class="buttons" align="center">
+            <input type="submit" value="Submit" id="submit">
+
+            &nbsp &nbsp <input type="reset" value="Reset">
+        </div>
+        <br />
+        <br />
+        @if (ViewBag.Error == true)
+        {
+            <p>
+                Admin Added Successfully
+            </p>
+        }
+        else if(ViewBag.Error==false)
+        {
+            <div class="p1">
+                Admin Details already exist...
+                </div>
+        }
+    }
+
+</body>
+</html>

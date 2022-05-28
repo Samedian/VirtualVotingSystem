@@ -1,0 +1,194 @@
+<html>
+<head>
+    <style>
+        /*This tag is used to add fontStyle, alignment, fontSize, height, width, backgroundcolor, color and shadow effect to the Header*/
+        h1 {
+            font-size: 80px;
+            text-align: center;
+            top: 50%;
+            width: 100%;
+            height: 80px;
+            background-color: black;
+            text-shadow: 2px 2px 4px green;
+            color: orange;
+        }
+
+            /*this tag is used to align, width, height and background color to the Logo*/
+            .header img {
+                float: left;
+                width: 10%;
+                height: 80px;
+                background-color: black;
+            }
+
+        /*this tag is used Style Marquee line */
+        .marueeLine {
+            color: orange;
+            width: 100%;
+            height: 130px;
+            font-size: 17px;
+            font-family: 'Times New Roman';
+        }
+
+        /*this is used to align the images of Register, Loging and FAQ and make them in to columns*/
+        .imageColumn {
+            float: left;
+            margin-left: 50px;
+            left: 20px;
+            width: 20%;
+            padding: 10px;
+            height: 20px;
+        }
+
+        .imageRow::after {
+            top: 100px;
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .buttons {
+            position: absolute;
+            top: 520px;
+        }
+
+        #button1 {
+            position: absolute;
+            top: 480px;
+            left: 265px;
+            background-color: orangered;
+            width: 130px;
+            height: 40px;
+            color: white;
+        }
+
+        #button2 {
+            position: absolute;
+            top: 480px;
+            left: 537px;
+            background-color: blue;
+            width: 130px;
+            color: white;
+            height: 40px;
+        }
+
+        #button3 {
+            position: absolute;
+            top: 480px;
+            left: 810px;
+            background-color: darkgreen;
+            width: 130px;
+            color: white;
+            height: 40px;
+        }
+
+        /*this is used to add styling to the slide show */
+        .mySlides {
+            position: absolute;
+            top: 350px;
+            width: 90%;
+            height: 300px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .top-left {
+            position: absolute;
+            top: 15px;
+            left: 50px;
+        }
+
+        .top-middle {
+            position: absolute;
+            top: 15px;
+            left: 430px;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 15px;
+            left: 800px;
+        }
+    </style>
+</head>
+<body>
+
+    @* this class is used to produce the Register,Loging and FAQ Images which are responsive*@
+    <div class="container">
+
+        <div class="top-left">
+
+            <a href="@Url.Action("UserRegister","Account")"> <img src="/Images/RegisterIcon.png" style="width:130px"></a>
+        </div>
+        <div class="top-middle">
+
+            <a href="@Url.Action("Login","Account")"> <img src="/Images/LoginLogo.png" style="width:130px"></a>
+        </div>
+        <div class="top-right">
+
+            <a href="@Url.Action("FAQ","Account")"> <img src="/Images/FAQLogo.png" style="width:130px"></a>
+        </div>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <marquee class="marueeLine" direction="left" scrollamount="16">
+        <h3 style="color:darkorange">"Voting is the Primary Duty of Democracy."</h3>
+        <h3 style="color:darkblue">"Not voting is not a protest.It is a surrender."</h3>
+        <h3 style="color:darkgreen">"Have a vision? Make the right decision."</h3>
+    </marquee>
+    <br />
+    @* this class is used to make the slide show*@
+    <div align="center" style="max-width:400px">
+        <img class="mySlides" src="~/Images/votingSlogan1.jpg" />
+        <img class="mySlides" src="~/Images/votingSlogan.jpg" />
+        <img class="mySlides" src="~/Images/votingSlogan2.jpg" />
+        <img class="mySlides" src="~/Images/votingSlogan4.jpg" />
+    </div>
+
+
+    @* this tag is used to make the changes in the Slideshow effect*@
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "200px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+
+
+</html>

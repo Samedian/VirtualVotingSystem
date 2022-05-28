@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        h1 {
+            text-align: center;
+            color: white;
+            background-color: darkgreen;
+            font-family: 'Times New Roman';
+            font-size: 35px;
+
+        }
+
+        Table {
+            width: 100%;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        th {
+            background-color: black;
+            height: 100px;
+            color: white;
+            font-size: 25px;
+            font-family: 'Times New Roman';
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        input[type=submit] {
+            width: 10%;
+            height: 10%;
+            background-color: green;
+            color: white;
+        }
+         
+        .submitButton mouse {
+        }
+    </style>
+    
+</head>
+<body>
+
+    <h1>CHOOSE ONE CANDIDATE</h1>
+    <br />
+    <br />
+    @using (Html.BeginForm())
+    {
+
+        @if (ViewBag.UserId.IsCasted)
+        {
+            <table cellpadding="10" border="1">
+                <tr>
+                    <th> CandidateId</th>
+                    <th> CandidateName</th>
+                    <th> CandidateParty</th>
+                    <th> SelectCandidate</th>
+                </tr>
+                @foreach (var item in ViewBag.Candidate)
+                {
+                    <tr>
+                        <td>@item.CandidateId</td>
+                        <td>@item.CandidateName</td>
+                        <td>@item.CandidateParty</td>
+                        <td>
+                            <input type="radio" name="candidateId" value="@item.CandidateId" id="radioButton" disabled> <br>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            <br />
+            <br />
+            <p style="text-align:center"><a href="@Url.Action("Index","Account")">Back To Home</a> </p>
+        }
+        else
+        {
+            <table cellpadding="10" border="1">
+                <tr>
+                    <th> CandidateId</th>
+                    <th> CandidateName</th>
+                    <th> CandidateParty</th>
+                    <th> SelectCandidate</th>
+                </tr>
+                @foreach (var item in ViewBag.Candidate)
+                {
+                    <tr>
+                        <td>@item.CandidateId</td>
+                        <td>@item.CandidateName</td>
+                        <td>@item.CandidateParty</td>
+                        <td>
+                            <input type="radio" name="candidateId" value="@item.CandidateId" id="radioButton"> <br>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            <br />
+            <br />
+            <div class="submitButton" align="center">
+
+                <input type="submit" value="Submit">
+            </div>
+        }
+    }
+</body>
+</html>
