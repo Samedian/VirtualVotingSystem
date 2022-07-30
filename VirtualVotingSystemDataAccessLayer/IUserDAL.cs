@@ -11,5 +11,6 @@ namespace VirtualVotingSystemDataAccessLayer
         void CastVote(CandidateDetailEntity candidate, UserIdEntity userId);
         Task<CandidateDetailEntity> GetCandidateById(string candidateId);
         Task<UserIdEntity> GetUserIdDetailsByVvid(string vvId);
+        Task<UserIdEntity> GetUserIdDetailsByAadhar(long aadharNo);
     }
 }

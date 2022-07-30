@@ -15,7 +15,7 @@ namespace VirtualVotingDemo
         public string SendOTP(string MobileNumber)
         {
             string accountSid = "AC82ff01713e70291bb73582ae69445d96";
-            string authToken = "17a2eff5bbd7e6d822670018a219b82a";
+            string authToken = "41d40cc19372b51b77e414cd484a4a73";
 
             TwilioClient.Init(accountSid, authToken);
 
@@ -27,7 +27,7 @@ namespace VirtualVotingDemo
             {
                 var message = MessageResource.Create(
                 body: data,
-                from: new Twilio.Types.PhoneNumber("+12563842669"),
+                from: new Twilio.Types.PhoneNumber("+12058461346"),
                 to: new Twilio.Types.PhoneNumber("+91" + MobileNumber)
             );
             }
@@ -42,7 +42,7 @@ namespace VirtualVotingDemo
         public void SendPassword(string MobileNumber, UserIdEntity userIdEntity)
         {
             string accountSid = "AC82ff01713e70291bb73582ae69445d96";
-            string authToken = "17a2eff5bbd7e6d822670018a219b82a";
+            string authToken = "41d40cc19372b51b77e414cd484a4a73";
 
             TwilioClient.Init(accountSid, authToken);
 
@@ -52,7 +52,7 @@ namespace VirtualVotingDemo
             {
                 var message = MessageResource.Create(
                 body: data,
-                from: new Twilio.Types.PhoneNumber("+12563842669"),
+                from: new Twilio.Types.PhoneNumber("+12058461346"),
                 to: new Twilio.Types.PhoneNumber("+91" + MobileNumber)
             );
             }

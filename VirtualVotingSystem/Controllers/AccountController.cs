@@ -27,12 +27,15 @@ namespace VirtualVotingSystem.Controllers
         private readonly ISMS _iSMS;
         private static string verifyCode;
         private static int count = 1;
+        private readonly IUserBAL _userBAL;
 
-        public AccountController(IAccountBAL accountBAL, IModelToEntityManager modelToEntityManager, IGenerateID generateID, ISMS iSMS)
+
+        public AccountController(IAccountBAL accountBAL, IModelToEntityManager modelToEntityManager, IGenerateID generateID, ISMS iSMS, IUserBAL userBAL)
         {
             _accountBAL = accountBAL;
             _generateID = generateID;
             _iSMS = iSMS;
+            _userBAL = userBAL;
         }
 
 
@@ -121,9 +124,17 @@ namespace VirtualVotingSystem.Controllers
         public async Task<IActionResult> UserRegister(string AadharNumber)
         {
             UserDetailEntity userDetailEntity = await _accountBAL.GetUserDetailsByAadhar(AadharNumber);
-            verifyCode = _iSMS.SendOTP(Convert.ToString(userDetailEntity.MobileNumber));
-            TempData["UserDetailAccount"] = JsonConvert.SerializeObject(userDetailEntity);
-            return RedirectToAction("EnterOTP");
+            UserIdEntity userIdEntity = await _userBAL.GetUserIdByAadhar(Convert.ToInt64(AadharNumber));
+            if (userIdEntity == null)
+            {
+                verifyCode = _iSMS.SendOTP(Convert.ToString(userDetailEntity.MobileNumber));
+                TempData["UserDetailAccount"] = JsonConvert.SerializeObject(userDetailEntity);
+                return RedirectToAction("EnterOTP");
+            }
+            else {
+                TempData["UserIdDetails"] = JsonConvert.SerializeObject(userIdEntity);
+                return RedirectToAction("Alreadyregistered");
+            }
 
         }
 
@@ -238,6 +249,11 @@ namespace VirtualVotingSystem.Controllers
         [HttpGet]
         public IActionResult FAQ()
         {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Alreadyregistered() {
             return View();
         }
     }

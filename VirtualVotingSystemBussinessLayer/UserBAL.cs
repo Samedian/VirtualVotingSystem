@@ -42,6 +42,12 @@ namespace VirtualVotingSystemBussinessLayer
             UserIdEntity userIdEntity = await _userDAL.GetUserIdDetailsByVvid(vvId);
             return userIdEntity;
         }
+
+        public async Task<UserIdEntity> GetUserIdByAadhar(long aadharNo)
+        {
+            UserIdEntity result = await _userDAL.GetUserIdDetailsByAadhar(aadharNo);
+            return await Task.FromResult(result);
+        }
     }
 
 }

@@ -165,5 +165,32 @@ namespace VirtualVotingSystemDataAccessLayer
                 }
             }
         }
+        public async Task<UserIdEntity> GetUserIdDetailsByAadhar(long aadharNo)
+        {
+            using (var context = new VirtualVotingSystemContext())
+            {
+                try
+                {
+                    var data = context.UserIds.FirstOrDefault(x => x.AadharNumber == aadharNo);
+                    if (data != null)
+                    {
+                        UserIdEntity userIdEntity = _modelToEntityManager.GetUserIdEntity(data);
+                        return await Task.FromResult(userIdEntity);
+                    }
+                    else
+                        return null;
+
+                }
+                catch (SqlException ex)
+                {
+                    throw ex.InnerException;
+                }
+                catch (Exception ex)
+                {
+                    throw ex.InnerException;
+
+                }
+            }
+        }
     }
 }

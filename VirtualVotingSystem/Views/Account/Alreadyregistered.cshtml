@@ -1,0 +1,54 @@
+﻿<html>
+<head>
+    @*this tag is used to link the CSS file which will add the background image *@
+    <link rel="Stylesheet" href="~/css/StyleSheet.css">
+
+    @*  this tag is used to add styling *@
+    <style>
+        /* this tag is used to add alignment,color and size*/
+        h2 {
+            text-align: center;
+            color: black;
+            font-family: 'Times New Roman';
+            font-size: 30px;
+        }
+
+        /* this tag is used to add alignment,color and size*/
+        h3 {
+            text-align: center;
+            color: black;
+            font-family: 'Times New Roman';
+            font-size: 30px;
+        }
+
+        img {
+            top: 100px;
+        }
+
+        /* this tag is used to add alignment,height,width,fontsize and color to the  the marquee line */
+        .marueeLine {
+            color: darkred;
+            width: 100%;
+            height: 150px;
+            font-size: 20px;
+            font-family: 'Times New Roman';
+        }
+    </style>
+
+</head>
+<body>
+    @*This tag is used to design the marque effect on the screen *@
+    <marquee class="marueeLine" direction="left" scrollamount="16">
+        <h3> Please save your VirtualVoterID(VVId) for further process</h3>
+    </marquee>
+    <br />
+
+    <h2 style="color:red">@ViewBag.User</h2>
+    @* checking whether the User is existed and displaying the appropriate message*@
+    <h2>You have Already Registered</h2>
+    
+    <br />
+    <p style="text-align:center"><a href="@Url.Action("Index","Account")"><input style="background-color:darkgray" type="submit" value="Home" /></a> </p>
+
+</body>
+</html>
